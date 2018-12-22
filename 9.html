@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>😊</title>
+	<meta charset="utf-8">
+	<script>
+	var xhr;
+    if (window.XMLHttpRequest) {
+        xhr = new window.XMLHttpRequest();
+    }else{
+        xhr = ActiveObject("Macrosoft.XMLHTTP");
+        }
+    xhr.open("get","http://mock-api.com/4jzA4LKk.mock/request",true);
+    xhr.send();
+
+	// var xhr = new XMLHttpRequest()
+    xhr.onreadyStatechange = function(){
+    if(xhr.readyState == 4&&status ==200){
+    	var x = JSON.parse(xhr.responseText);
+    	document.getElementById("name").innerHTML="姓名："+ x.name;
+    	// console.log();
+    	document.getElementById("number").innerHTML="学号："+x.number;
+    	document.getElementById("university").innerHTML="就读学校"+x.university;
+    	document.getElementById("college").innerHTML="学院："+x.college;
+    	document.getElementById("dorm").innerHTML="寝室号："+x.dorm;
+    	document.getElementById("img").innerHTML=""+x.img;
+    	document.getElementById("subject").innerHTML="x.subject";
+    	console.log(x.responseText)
+      }else{
+        console.log("Request was unsuccessful"+x.responseText)
+      }
+    }
+    
+	</script>
+</head>
+<body>
+	<!-- <img src="http://39.105.159.23:8080/uploads/pic/20181221/1545385599708.png" width="200px" height="200px;"> -->
+<!-- <div id="name"></div> -->
+	<p id="name">姓名：</p>
+	<p id="number">学号：</p>
+	<p id="university">就读学校：</p>
+	<p id="college">学院：</p>
+	<p id="dorm">寝室号：</p>
+	<p id="img"></p>
+	<ul id="subject">
+		<li>经济学成绩</li>
+		<li>管理学成绩</li>
+		<li>会计学成绩</li>
+	</ul>
+
+
+</body>
+</html>
